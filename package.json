@@ -15,7 +15,19 @@
     "cross-env": "^7.0.3"
   },
   "devDependencies": {
+    "eslint": "^8.6.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
     "jest": "^27.4.7",
-    "nodemon": "^2.0.15"
+    "lint-staged": "^12.1.7",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1"
+  },
+  "lint-staged": {
+    "src/**/*": [
+      "eslint --fix",
+      "prettier --write --ignore-unknown"
+    ]
   }
 }
