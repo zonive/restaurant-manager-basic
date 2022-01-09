@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
-const { nodeEnv } = require("./utils");
-const { databaseConfig } = require("../database/dbConfig");
+const { nodeEnv } = require("./utils.cjs");
+const databaseConfig = require("../database/dbConfig.cjs");
 
 module.exports = {
   env: nodeEnv,
@@ -10,5 +10,10 @@ module.exports = {
   options: {
     port: process.env.PORT,
     public_routes_prefix: "/api/public",
+    private_routes_prefix: "/api/private",
+  },
+  security: {
+    key_path: process.env.HTTPS_KEY_PATH,
+    cert_path: process.env.HTTPS_CERT_PATH,
   },
 };
