@@ -1,11 +1,14 @@
 /* eslint-disable no-undef */
-// config/default.cjs
-const { nodeEnv } = require("./utils.cjs");
-const databaseConfig = require("../database/dbConfig.cjs");
+const { nodeEnv } = require("./utils");
+const { databaseConfig } = require("../database/dbConfig");
 
 module.exports = {
   env: nodeEnv,
   is_test: false,
   name: "restaurant-manager-js",
   database: databaseConfig,
+  options: {
+    port: process.env.PORT,
+    public_routes_prefix: "/api/public",
+  },
 };

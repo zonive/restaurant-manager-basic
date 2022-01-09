@@ -1,6 +1,4 @@
 /* eslint-disable no-undef */
-// database/dbConfig.cjs
-
 require("../config/utils.cjs");
 
 module.exports = {
