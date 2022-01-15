@@ -8,6 +8,16 @@ import {
   postExample,
 } from "./example.js";
 
+import {
+  deleteOrders,
+  getOrders,
+  getOrderss,
+  patchOrders,
+  postOrders,
+} from "./orders.js";
+
+import { deleteMenu, getMenu, getMenus, patchMenu, postMenu } from "./menu.js";
+
 export default [
   {
     method: "GET",
@@ -39,5 +49,55 @@ export default [
     method: "DELETE",
     path: "/example/:id",
     cbs: [deleteExample],
+  },
+  {
+    method: "GET",
+    path: "/orders/all",
+    cbs: [getOrderss],
+  },
+  {
+    method: "GET",
+    path: "/example/:id",
+    cbs: [getOrders],
+  },
+  {
+    method: "POST",
+    path: "/orders",
+    cbs: [postOrders],
+  },
+  {
+    method: "PATCH",
+    path: "/orders",
+    cbs: [patchOrders],
+  },
+  {
+    method: "DELETE",
+    path: "/orders/:id",
+    cbs: [deleteOrders],
+  },
+  {
+    method: "GET",
+    path: "/menu/all",
+    cbs: [getMenus],
+  },
+  {
+    method: "GET",
+    path: "/menu/:id",
+    cbs: [getMenu],
+  },
+  {
+    method: "POST",
+    path: "/menu",
+    cbs: [postMenu],
+  },
+  {
+    method: "PATCH",
+    path: "/menu",
+    cbs: [patchMenu],
+  },
+  {
+    method: "DELETE",
+    path: "/menu/:id",
+    cbs: [deleteMenu],
   },
 ];
