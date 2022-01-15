@@ -38,7 +38,13 @@ class DatabaseProvider {
   };
 
   getAll = async (modelName) => {
-    return await this.models[modelName].findAll();
+    const items = await this.models[modelName].findAll();
+    if (modelName === "menu" && items.length < 12) {
+      return {
+        error: "INVALID CONFIGURATION",
+      };
+    }
+    return items;
   };
 
   getOne = async (modelName, options) => {

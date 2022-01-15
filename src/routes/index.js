@@ -57,7 +57,7 @@ export default [
   },
   {
     method: "GET",
-    path: "/example/:id",
+    path: "/orders/:id",
     cbs: [getOrders],
   },
   {
